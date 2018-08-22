@@ -1,0 +1,83 @@
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");
+
+body {
+  margin: 0;
+}
+
+#header {
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#profile-pic {
+  float: left;
+  border-radius: 50%;
+  width: 280px;
+  height: 280px;
+  box-shadow: 0px 2px #aaaaaa;
+}
+
+#name {
+  font-size: 50px;
+  color: #272527;
+}
+
+#about-me {
+  padding-top: 100px;
+  margin: 20px;
+  max-width: 300px;
+}
+
+#description {
+  font-family: 'Roboto', sans-serif;
+  color: #7e7d7f;
+  font-size: 15px;
+}
+
+#links {
+  margin-top: 10px;
+  font-size: 40px; 
+  color: #EC4075;
+}
+
+#links a {
+  color: inherit;
+}
+
+#links a:hover {
+  color: black;
+}
+
+.link-img {
+  height: 36px;
+  width: 36px;
+  padding-top: 5px;
+  margin-bottom: -4px;
+}
+
+#portfolio {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.portfolio-screenshot {
+  margin: 10px;
+  box-shadow: 2px 2px 6px #7e7d7f;
+}
+
+.portfolio-screenshot img {
+  width: 80px;
+  height: auto;
+}
+
+.portfolio-screenshot video {
+  width: 100px;
+  height: auto;
+}
+
+#portfolio img {
+  height: 500px;
+}
