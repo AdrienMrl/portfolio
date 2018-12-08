@@ -81,3 +81,59 @@ body {
 #portfolio img {
   height: 500px;
 }
+
+.mission {
+  text-align: center;
+}
+
+.mission a {
+  color: black;
+  font-family: 'Roboto';
+  font-weight: 600;
+}
+
+#mission-info {
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #DB4F76F0;
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 100;
+    font-size: 1.1em;
+}
+
+#mission-info p {
+  padding-right: 3em;
+  margin-bottom: 2em;
+  margin-top: 0.2em;
+  margin-left: 2em;
+}
+
+#thumbnail-mission {
+  display: block;
+  max-width:4em;
+  max-height:4em;
+  width: auto;
+  height: auto;
+  float: left;
+  margin: 1em;
+}
+
+#close-button {
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+  width: auto;
+  max-height: 1.5em;
+  margin-top: 0px;
+}
+
+#mission-name {
+  font-family: 'Roboto';
+  font-weight: 900;
+  font-size: 1.8em;
+  margin-top: 0.5em;
+  color: #272527;
+}

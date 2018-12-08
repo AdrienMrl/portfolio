@@ -11,6 +11,40 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="icon" href="coffee.png">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+
+      function togglePanel(status, id) {
+        $("#mission-info").animate({
+          bottom: (status ? 0 : -1) * $("#mission-info").height()
+        }, 250);
+
+        if (status) {
+          const descriptions = {
+            "pharma": {"name": "Pharma Express", "description": "This mission lasted for about 6 months. I had to develop from scratch a React Native app and a Node.js backend for a startup called Pharma Express. It is my biggest React Native project. Click on the screen capture to try the android app."},
+            "topbattle": {"name": "Top Battle", "description": "I've been working part time on this game for more than a year for a Parisian startup called YAQUA. I made the Node.js backend which handles a few hundred thousands users and a few million games. I developped most of the app myself using the Unity game engine."},
+            "citeasy": {"name": "Citeasy", "description": "React Native app. I only worked two screens: the one that is shown here and another screen listing a full trip. It took me about 4 days."},
+            "wordsearch": {"name": "8 Words Search", "description": "Game developed using Java and the Android framework."},
+            "ziggtime": {"name": "Ziggtime", "description": "I worked on this app for a few months with another developer for a startup in Lyon. It is made using Swift and Cocoa Touch. There is also a backend using Go and Node.js. The app is a social network that allows using to send polls to their friends."},
+            "wordcross": {"name": "8 Words Cross", "description": "Game developed using Java and the Android framework."},
+            "meetclubbing": {"name": "Meetclubbing", "description": "Android java app. I didn't create this app but added some features; using the Spotify API to list and play some music, sorting through profile pictures with drag and drop and instant messaging using WebSocket."},
+            "flipflop": {"name": "Flip Flop Saga", "description": "Game developed for iOS and Android using Unity with another developer. About 6 months of work."},
+            "alveolkustic": {"name": "Alveolkustic", "description": "One of my first iOS app. Developped with someone else using Swift. A company from Lyon selling acoustic solutions needed an app to make room measurements. The app can record sounds, take pictures, import measures from another app and eventually sends everything into a Google Drive directory."},
+            "wordsapart": {"name": "8 Words Apart", "description": "Android java game. About two months of work, featuring in-app purchases, ads and a back-office."}
+          };
+          $("#mission-description").text(descriptions[id].description);
+          $("#mission-name").text(descriptions[id].name);
+        }
+      }
+
+    $(document).ready(() => {
+      $("#mission-info").css({bottom: -$("#mission-info").height()});
+      $("#close-button").click(_ => togglePanel(false));
+      $(".more-info").click(function() { togglePanel(true, $(this).attr("id")); });
+    });
+
+  </script>
+
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
@@ -18,13 +52,13 @@
 
 <body>
   <div id="header">
-    <img src="adrien.webp" id="profile-pic" />
+    <img src="adrien.png" id="profile-pic" />
     <div id="about-me">
       <span id="name">
         <b>Adrien Morel</b>
       </span>
       <br />
-      <span id="description">Je suis un développeur full stack freelance basé à Lyon. Je travaille principalement sur du mobile et backend.</span>
+      <span id="description">I'm a full stack freelance developer based in Lyon, France. I mainly work on mobile app and backend development.</span>
       <div id="links">
         <a href="mailto:hello@adrienmorel.co"><i class="fa fa-envelope"></i></a>
         <a href="https://github.com/Sevauk"><i class="fa fa-github"></i></a>
@@ -33,19 +67,67 @@
       </div>
     </div>
   </div>
-
+  
   <div id="portfolio">
-    <a href="https://www.citeazy.fr/"><img class="portfolio-screenshot" src="captures/citeasy.png" /></a>
-    <a href="https://play.google.com/store/apps/details?id=com.yaqua.heightwordssearch&hl=en"><img class="portfolio-screenshot" src="captures/8wordscross.webp" /></a>
-    <a href="https://ziggtime.com"><img class="portfolio-screenshot" src="captures/ziggtime.png" /></a>
-    <a href="https://play.google.com/store/apps/details?id=com.yaqua.heightwordscross&hl=en"><img class="portfolio-screenshot" src="captures/8wordscross2.webp" /></a>
-    <a href="https://play.google.com/store/apps/details?id=com.saint__y.meetclubbing&hl=en"><img class="portfolio-screenshot" src="captures/meetclubbing.webp" /></a>
-    <a href="https://play.google.com/store/apps/details?id=com.yaqua.android.flipflop&hl=en"><img class="portfolio-screenshot" src="captures/flipflop.webp" /></a>
-    <a href="https://itunes.apple.com/fr/app/alveolkustic/id1203541280?mt=8"><img class="portfolio-screenshot" src="captures/alveolkustic.jpg" /></a>
-    <a href="https://play.google.com/store/apps/details?id=com.heightwordsapart.game&hl=en"><img class="portfolio-screenshot" src="captures/8wordsapart.webp" /></a>
-    <a href="https://play.google.com/store/apps/details?id=com.pharmaexpress&hl=fr"><img class="portfolio-screenshot" src="captures/pharmaexpress.webp" /></a>
-    <a href="https://play.google.com/store/apps/details?id=com.yaqua.TopBattle&hl=fr"><img class="portfolio-screenshot" src="captures/topbattle.webp" /></a>
-  </div>
+    <div class="mission">
+      <a href="javascript:undefined" class="more-info" id="pharma">More info</a><br>
+      <a href="https://play.google.com/store/apps/details?id=com.pharmaexpress&hl=fr"><img class="portfolio-screenshot"
+          src="captures/pharmaexpress.png" /></a>
+    </div>
+    <div class="mission">
+      <a href="javascript:undefined" class="more-info" id="topbattle">More info</a><br>
+      <a href="https://play.google.com/store/apps/details?id=com.yaqua.TopBattle&hl=fr"><img class="portfolio-screenshot"
+          src="captures/topbattle.png" /></a>
+    </div>
+    <div class="mission">
+      <a href="javascript:undefined" class="more-info" id="citeasy">More info</a><br>
+      <a href="https://www.citeazy.fr/"><img class="portfolio-screenshot" src="captures/citeasy.png" /></a>
+    </div>
+    <div class="mission">
+      <a href="javascript:undefined" class="more-info" id="wordsearch">More info</a><br>
+      <a href="https://play.google.com/store/apps/details?id=com.yaqua.heightwordssearch&hl=en"><img class="portfolio-screenshot"
+          src="captures/8wordscross.png" /></a>
+    </div>
+    <div class="mission">
+      <a href="javascript:undefined" class="more-info" id="ziggtime">More info</a><br>
+      <a href="https://ziggtime.com"><img class="portfolio-screenshot" src="captures/ziggtime.png" /></a>
+    </div>
+    <div class="mission">
+      <a href="javascript:undefined" class="more-info" id="wordcross">More info</a><br>
+      <a href="https://play.google.com/store/apps/details?id=com.yaqua.heightwordscross&hl=en"><img class="portfolio-screenshot"
+          src="captures/8wordscross2.png" /></a>
+    </div>
+    <div class="mission">
+      <a href="javascript:undefined" class="more-info" id="meetclubbing">More info</a><br>
+      <a href="https://play.google.com/store/apps/details?id=com.saint__y.meetclubbing&hl=en"><img class="portfolio-screenshot"
+          src="captures/meetclubbing.png" /></a>
+    </div>
+    <div class="mission">
+      <a href="javascript:undefined" class="more-info" id="flipflop">More info</a><br>
+      <a href="https://play.google.com/store/apps/details?id=com.yaqua.android.flipflop&hl=en"><img class="portfolio-screenshot"
+          src="captures/flipflop.png" /></a>
+    </div>
+    <div class="mission">
+      <a href="javascript:undefined" class="more-info" id="alveolkustic">More info</a><br>
+      <a href="https://itunes.apple.com/fr/app/alveolkustic/id1203541280?mt=8"><img class="portfolio-screenshot" src="captures/alveolkustic.jpg" /></a>
+    </div>
+    <div class="mission">
+      <a href="javascript:undefined" class="more-info" id="wordsapart">More info</a><br>
+      <a href="https://play.google.com/store/apps/details?id=com.heightwordsapart.game&hl=en"><img class="portfolio-screenshot"
+          src="captures/8wordsapart.png" /></a>
+    </div>
 
-</body>
-</html>
+    <div id="mission-info">
+      <img id="thumbnail-mission" src="./coding.png" />
+      <div id="mission-name">
+        Nom de la mission
+      </div>
+      <p id="mission-description">Description de la mission</p>
+      <a href="javascript:undefined" id="close-button"><img id="close-button" src="./close.png" /></a>
+    </div>
+
+  </div>
+  
+  </body>
+  
+  </html>
