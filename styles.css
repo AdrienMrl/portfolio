@@ -4,6 +4,10 @@ body {
   margin: 0;
 }
 
+a {
+  color: #EC4075;
+}
+
 #header {
   padding: 50px;
   display: flex;
